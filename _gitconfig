@@ -1,0 +1,8 @@
+[user]
+ email = kyohei.masuda@icloud.com
+ name = maskyo
+[core]
+ editor = vim
+ excludesfile = /Users/maskyo/.gitignore
+[color]
+ ui = auto
