@@ -16,10 +16,20 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
 NeoBundle 'Shougo/neosnippet.vim'
+
 NeoBundle 'Shougo/neosnippet-snippets'
+
 NeoBundle 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_max_height = 30
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
+
 NeoBundle 'flazz/vim-colorschemes'
+
 NeoBundle 'slim-template/vim-slim'
+
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden = 1
 nnoremap <C-l>      :<C-u>NERDTree<CR>
@@ -34,8 +44,6 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix' : 'make -f make_unix.mak',
   \ },
 \ }
-NeoBundle 'aharisu/vim_goshrepl'
-vmap <CR> <Plug>(gosh_repl_send_block)
 
 " Required:
 call neobundle#end()
@@ -49,11 +57,6 @@ NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
 "config NeoBundle 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_mruf_max = 500
-let g:ctrlp_max_height = 30
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_show_hidden = 1
 
 set nocompatible
 set number
