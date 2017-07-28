@@ -40,9 +40,6 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'aharisu/vim_goshrepl'
 vmap <CR> <Plug>(gosh_repl_send_block)
 
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
 " Required:
 call neobundle#end()
 
