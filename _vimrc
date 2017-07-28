@@ -21,8 +21,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'slim-template/vim-slim'
-NeoBundle 'thinca/vim-ref'
-
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden = 1
 nnoremap <C-l>      :<C-u>NERDTree<CR>
