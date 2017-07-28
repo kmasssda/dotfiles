@@ -1,70 +1,64 @@
-"NeoBundle Scripts-----------------------------
-"
+"dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath^=/Users/maskyo/.vim/bundle/neobundle.vim/
+set runtimepath+=/Users/maskyo/.vim//repos/github.com/Shougo/dein.vim
 
 " Required:
-call neobundle#begin(expand('/Users/maskyo/.vim/bundle'))
+if dein#load_state('/Users/maskyo/.vim/')
+  call dein#begin('/Users/maskyo/.vim/')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/maskyo/.vim//repos/github.com/Shougo/dein.vim')
 
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  let g:ctrlp_mruf_max = 500
+  let g:ctrlp_max_height = 30
+  let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+  let g:ctrlp_clear_cache_on_exit = 0
+  let g:ctrlp_show_hidden = 1
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('scrooloose/nerdtree')
+  let NERDTreeShowHidden = 1
 
-NeoBundle 'Shougo/neosnippet-snippets'
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-NeoBundle 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_mruf_max = 500
-let g:ctrlp_max_height = 30
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_show_hidden = 1
-
-NeoBundle 'flazz/vim-colorschemes'
-
-NeoBundle 'slim-template/vim-slim'
-
-NeoBundle 'scrooloose/nerdtree'
-let NERDTreeShowHidden = 1
-nnoremap <C-l>      :<C-u>NERDTree<CR>
-
-"NeoBundle 'Shougo/unite.vim'
-
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-\ }
-
-" Required:
-call neobundle#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
-"config NeoBundle 'ctrlpvim/ctrlp.vim'
+"End dein Scripts-------------------------
 
-" ----------
-"  Settings
-" ----------
+" ----------------------------------------
+"                Settings
+" ----------------------------------------
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
 " ----- Status line -----
 
 set laststatus=2                          " Show status line always
+set statusline=%F                         " Show file name
 set statusline+=%=                        " Text right
 set statusline+=[ENC=%{&fileencoding}]    " Show file encoding
 set statusline+=[LOW=%l/%L]               " Show [ line number / total line number ]
@@ -132,6 +126,8 @@ syntax on
 
 " Break a line when you hit a CR
 noremap <CR> o<ESC>
+" Shortcut for opening NERDTree
+nnoremap <C-l>      :<C-u>NERDTree<CR>
 
 
 " ----- Other settings -----
