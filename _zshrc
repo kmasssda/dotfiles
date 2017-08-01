@@ -98,7 +98,7 @@ alias gci='git commit'
 alias gco='git checkout'
 alias gnew='git checkout -b'
 alias gre='git rebase -i'
-alias gp='git pull upstream master'
+alias gp='git pull origin master --prune'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gg='git grep -ne'
 
