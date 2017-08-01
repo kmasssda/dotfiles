@@ -6,3 +6,5 @@
  excludesfile = /Users/maskyo/.gitignore
 [color]
  ui = auto
+[fetch]
+ prune = true
