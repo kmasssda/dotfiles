@@ -73,7 +73,6 @@ set cmdheight=2 " Command line space
 
 set showmatch " Show bracket pair
 
-
 " ----- Cursol settings -----
 
 set cursorline " show cursor line
@@ -120,7 +119,8 @@ set smartindent                   " Increase or decrease the indent of the next 
 " ----- Syntax settings -----
 
 syntax on
-
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " ----- Util settings -----
 
