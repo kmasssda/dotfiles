@@ -132,6 +132,9 @@ noremap <CR> o<ESC>
 nnoremap <C-l>      :<C-u>NERDTree<CR>
 " tagbar settings
 nmap <F2> :TagbarToggle<CR>
+" use ctags settings
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
 
 " ----- Other settings -----
