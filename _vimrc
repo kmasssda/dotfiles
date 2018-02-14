@@ -27,6 +27,8 @@ if dein#load_state('/Users/maskyo/.vim/')
   call dein#add('slim-template/vim-slim')
   call dein#add('scrooloose/nerdtree')
   let NERDTreeShowHidden = 1
+  call dein#add('w0rp/ale') " Sybtax check
+  call dein#add('majutsushi/tagbar') " displays tags in a window
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -128,6 +130,8 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 noremap <CR> o<ESC>
 " Shortcut for opening NERDTree
 nnoremap <C-l>      :<C-u>NERDTree<CR>
+" tagbar settings
+nmap <F2> :TagbarToggle<CR>
 
 
 " ----- Other settings -----
