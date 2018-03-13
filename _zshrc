@@ -15,10 +15,6 @@ PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
 #
 autoload -U compinit; compinit
 
-## rbenv init
-#
-eval "$(rbenv init -)"
-
 ## setup direnv
 eval "$(direnv hook $0)"
 
@@ -34,7 +30,13 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
 ## set additional path
 #
+export PATH=/usr/local/bin:$PATH
+export PATH=/Users/maskyo/.rbenv/shims:$PATH
 path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+
+## rbenv init
+#
+eval "$(rbenv init -)"
 
 ## Command history configuration
 #
