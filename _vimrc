@@ -18,11 +18,6 @@ if dein#load_state('/Users/maskyo/.vim/')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('ctrlpvim/ctrlp.vim')
-  let g:ctrlp_mruf_max = 500
-  let g:ctrlp_max_height = 30
-  let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-  let g:ctrlp_clear_cache_on_exit = 0
-  let g:ctrlp_show_hidden = 1
   call dein#add('flazz/vim-colorschemes')
   call dein#add('slim-template/vim-slim')
   call dein#add('scrooloose/nerdtree')
@@ -77,11 +72,9 @@ set showmatch " Show bracket pair
 
 " ----- Cursol settings -----
 
-set cursorline " show cursor line
 set scrolloff=8                   " Secure visibility of 8 rows in the top and bottom
 set sidescrolloff=16              " Secure visibility when scrolling left and right
 set sidescroll=1                  " Perform left and right scrolls one character at a time
-
 
 " ----- Buffer settings -----
 
@@ -124,18 +117,34 @@ syntax on
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+
 " ----- Util settings -----
 
 " Break a line when you hit a CR
 noremap <CR> o<ESC>
+
+" Plugin settings
+
 " Shortcut for opening NERDTree
 nnoremap <C-l>      :<C-u>NERDTree<CR>
+
 " tagbar settings
 nmap <F2> :TagbarToggle<CR>
+
 " use ctags settings
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
+" ctrlp settings: (Prefix: s)
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_max_height = 30
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+nnoremap ss :<C-u>CtrlP<CR>
+nnoremap sa :<C-u>CtrlPBuffer<CR>
+nnoremap sl :<C-u>CtrlPLine<CR>
+nnoremap sq :<C-u>help ctrlp-options<CR>
+let g:ctrlp_extensions = ['line']
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:18'
 
 " ----- Other settings -----
 

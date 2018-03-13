@@ -105,6 +105,7 @@ alias gg='git grep -ne'
 alias gos='rlwrap gosh'
 
 alias ct='ctags -R'
+
 #
 # add zsh-completions path
 if [ -e /usr/local/share/zsh-completions ]; then
