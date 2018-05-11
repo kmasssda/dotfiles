@@ -10,7 +10,6 @@ export EDITOR=vim
 ## set prompt
 #
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
-
 ## Auto-completion
 #
 autoload -U compinit; compinit
@@ -107,6 +106,11 @@ alias gg='git grep -ne'
 alias gos='rlwrap gosh'
 
 alias ct='ctags -R'
+
+# for chrome alias
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
 #
 # add zsh-completions path
