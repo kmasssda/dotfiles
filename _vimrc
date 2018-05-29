@@ -24,6 +24,7 @@ if dein#load_state('/Users/maskyo/.vim/')
   let NERDTreeShowHidden = 1
   call dein#add('w0rp/ale') " Sybtax check
   call dein#add('majutsushi/tagbar') " displays tags in a window
+  call dein#add('kchmck/vim-coffee-script')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
