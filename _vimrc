@@ -110,6 +110,11 @@ set shiftwidth=2                  " Width displaced by automatic indentation
 set softtabstop=2                 " The width at which the cursor moves with a tab key or backspace key for 
 set autoindent                    " Continue indentation of previous line at line feed
 set smartindent                   " Increase or decrease the indent of the next line according to the end of the line entered at line feed
+augroup MyXML
+  autocmd!
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype eruby inoremap <buffer> </ </<C-x><C-o>
+augroup END
 
 
 " ----- Syntax settings -----
