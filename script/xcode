@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -Ceu
+
+if ! [ "$(which xcode-select)" ]; then
+  xcode-select --install
+fi

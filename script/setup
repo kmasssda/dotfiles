@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -Ceu
+
+cd "${0%/*}"/..
+
+for file in "$PWD"/*; do
+  name=${file##*/}
+  [[ $name = brewfile ]] && dotname="$name" || dotname=".${name}"
+
+  [[ "brewfile" =~ $dotname ]] && continue
+  [ -e "${HOME}/${dotname}" ] && continue
+  echo $dotname
+
+  ln -sfnv ${file#$HOME/} "${HOME}/${dotname}"
+done
+
+./script/xcode
+./script/brew_setup
+
+echo 'done your dotfiles setup!'
