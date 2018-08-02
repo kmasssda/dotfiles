@@ -9,7 +9,8 @@ export EDITOR=vim
 
 ## set prompt
 #
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
+PROMPT='ʕ◕ᴥ◕ʔ [%n@%m] %~ %# '
+
 ## Auto-completion
 #
 autoload -U compinit; compinit
