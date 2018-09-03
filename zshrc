@@ -80,7 +80,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias jk='jekyll '
-alias e='emacs'
+alias e='emacs -nw'
 
 alias r='rails'
 alias g='git '
