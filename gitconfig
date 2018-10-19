@@ -8,3 +8,5 @@
  ui = auto
 [fetch]
  prune = true
+[commit]
+ template = .commit_template
