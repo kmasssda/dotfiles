@@ -58,9 +58,21 @@ endif
 set laststatus=2                          " Show status line always
 set statusline=%F                         " Show file name
 set statusline+=%=                        " Text right
+set statusline+=[%{Getff()}]
 set statusline+=[ENC=%{&fileencoding}]    " Show file encoding
 set statusline+=[LOW=%l/%L]               " Show [ line number / total line number ]
 
+function! Getff()
+    if &ff == 'unix'
+        return 'LF'
+    elseif &ff == 'dos'
+        return 'CR+LF'
+    elseif &ff == 'mac'
+        return 'CR'
+    else
+        return '?'
+    endif
+endfunction
 
 " ----- Display -----
 
