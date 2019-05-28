@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
+
 set -Ceu
 
-if ! [ "$(which brew)" ]; then
-    echo "Installing homebrew..."
-    ruby <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
-    while read LINE; do
-      brew install ${LINE}
-    done < $HOME/dotfiles/brewfile
+brew install automake boost cairo cmake coreutils cscope ctags direnv docker docker-compose docker-machine fontconfig freetype fribidi gauche gd gdbm gdk-pixbuf gettext ghc ghq git glib gmp gnutls go gobject-introspection graphite2 graphviz harfbuzz highlight hub icu4c imagemagick jpeg jq libcroco libffi libidn2 libpng librsvg libtasn1 libtiff libtool libunistring libxml2 libyaml lua lv mysql nettle nkf node oniguruma openssl p11-kit pango pcre peco perl pixman pkg-config postgresql pwgen python rbenv readline redis rlwrap ruby ruby-build shared-mime-info sqlite terminal-notifier texinfo tig tree vim watch webp wget xz yarn zsh
 
-    brew cask install alfred docker haskell-platform kitematic licecap sequel-pro chromedriver flux iterm2 leksah ngrok skitch cyberduck google-japanese-ime karabiner-elements libreoffice pg-commander xtrafinder
-fi
+brew cask install alfred docker kitematic licecap sequel-pro chromedriver flux iterm2 leksah ngrok skitch cyberduck google-japanese-ime karabiner-elements libreoffice pg-commander

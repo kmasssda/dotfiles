@@ -31,7 +31,7 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 ## set additional path
 #
 export PATH=/usr/local/bin:$PATH
-export PATH=/Users/maskyo/.rbenv/shims:$PATH
+export PATH=/Users/maschang/.rbenv/shims:$PATH
 path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 
 ## rbenv init
@@ -45,10 +45,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
-
-## emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes to end of it)
-#
-bindkey -e
 
 ## auto directory pushd that you can get dirs list by cd -[tab]
 #
@@ -80,7 +76,6 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias jk='jekyll '
-alias e='emacs -nw'
 
 alias r='rails'
 alias g='git '
