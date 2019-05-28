@@ -46,6 +46,10 @@ SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
+## emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes to end of it)
+#
+bindkey -e
+
 ## auto directory pushd that you can get dirs list by cd -[tab]
 #
 setopt auto_pushd
