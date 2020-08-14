@@ -25,6 +25,9 @@ if dein#load_state('/Users/maschang/.cache/dein')
   call dein#add('w0rp/ale') " Sybtax check
   call dein#add('majutsushi/tagbar') " displays tags in a window
   call dein#add('kchmck/vim-coffee-script')
+  call dein#add('tpope/vim-rails')
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('peitalin/vim-jsx-typescript')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
