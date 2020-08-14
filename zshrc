@@ -16,7 +16,7 @@ PROMPT='ʕ◕ᴥ◕ʔ [%n@%m] %~ %# '
 autoload -U compinit; compinit
 
 ## setup direnv
-eval "$(direnv hook $0)"
+#eval "$(direnv hook $0)"
 
 ## do not allow duplicate
 #
@@ -36,13 +36,13 @@ path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 
 ## rbenv init
 #
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 ## Command history configuration
 #
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=1000000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
@@ -69,7 +69,6 @@ setopt no_beep
 
 ## add alias
 #
-alias v='vim '
 alias be='bundle exec'
 alias br='bundle exec rspec'
 alias la='ls -a'
@@ -111,6 +110,51 @@ alias ct='ctags -R'
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
+
+
+# peco config
+## search for commands from history
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+
+## search a destination from cdr list
+if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
+    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+    add-zsh-hook chpwd chpwd_recent_dirs
+    zstyle ':completion:*' recent-dirs-insert both
+    zstyle ':chpwd:*' recent-dirs-default true
+    zstyle ':chpwd:*' recent-dirs-max 1000
+    zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+fi
+
+function peco-cdr () {
+    local selected_dir="$(cdr -l | sed -E 's/^[0-9]+ +//' | peco --prompt="cdr >" --query "$LBUFFER")"
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+}
+zle -N peco-cdr
+bindkey '^T' peco-cdr
+
+## search dir from current dir and change dir
+function find_cd() {
+    cd "$(find . -type d | peco)"
+}
+alias c="find_cd"
+
+## seach file from current dir and open dir
+function find_vim() {
+  vim "$(find . -type f | peco)"
+}
+alias v="find_vim"
 
 #
 # add zsh-completions path
