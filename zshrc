@@ -156,6 +156,12 @@ function find_vim() {
 }
 alias v="find_vim"
 
+## ghq with peco
+alias hub='ghq'
+alias repos="ghq list -p | peco"
+alias repo='cd $(repos)'
+alias hub_open='gh-open $(repos)'
+
 #
 # add zsh-completions path
 if [ -e /usr/local/share/zsh-completions ]; then
